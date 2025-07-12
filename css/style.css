@@ -212,11 +212,12 @@ footer {
         font-size: 14px;
     }
 
-    .container-txt h3 {
+    .container-txt h3{
+
         font-size: 22px;
     }
-    
     .cnt-right h3 {
+        font-size: 26px;
         text-align: left;
     }
     .mainc {
