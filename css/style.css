@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFEF2;
+    padding: 0px 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+header {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+.ph{
+    width: 300px;
+    height: auto;
+    display: inline-block;
+}
+#prj {
+    text-align: center;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 25px;
+    border-top: 3px solid #373737;
+    border-bottom: 3px solid #373737;
+    padding: 10px 0px;
+}
+
+.content1 {
+    display: flex;
+    justify-content: center;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 15px;
+    margin: 30px 0px;
+}
+
+.content1-left {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+}
+
+.content1-center {
+    width: 40%;
+    text-align: justify;
+    padding: 15px 20px;
+}
+
+.content1-right {
+    width: 35%;
+    text-align: justify;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.container-txt {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 15px;
+    width: 40%;
+    border-right: 3px solid #373737;
+    text-align: justify;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+}
+
+.container-txt h3 {
+    font-size: 30px;
+    margin: 15px 0px;
+}
+
+.continer-right {
+    font-family: 'IBM Plex Serif', serif;
+    font-size: 15px;
+    width: 60%;
+    color: #373737;
+}
+
+ul {
+    list-style-position: inside;
+    font-size: 13px;
+    margin: 10px 0;
+    word-break: break-word;
+}
+
+.containers {
+    display: flex;
+}
+
+.container-right {
+    width: 60%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.mainc {
+    width: 100%;
+    height: 100%;
+    padding: 40px 40px;
+    border: 3px solid #373737;
+}
+
+.mainc h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.mainc input {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    border: 2px solid #373737;
+    background-color: #FFFEF2;
+    margin-bottom: 20px;
+}
+
+footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Libre Barcode 39 Extended Text', cursive;
+    padding: 40px;
+    margin-top: 40px;
+    font-size: 35px;
+    color: white;
+    background-color: #373737;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .content1 {
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .content1-left,
+    .content1-center,
+    .content1-right {
+        width: 100%;
+        padding: 10px 0;
+        text-align: justify;
+        border: none !important;
+        font-size: 14px;
+    }
+    .content1-left {
+        text-align: left;
+        margin-bottom: -10px;   }
+    .ph{
+        width: 200px;
+    }
+
+    .containers {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container-txt,
+    .container-right {
+        width: 90%;
+        padding: 10px 0;
+        text-align: justify;
+        border: none !important;
+        font-size: 14px;
+    }
+
+    .container-txt h3 {
+        font-size: 22px;
+    }
+
+    .mainc {
+        width: 100%;
+        padding: 20px;
+        margin-top: 20px;
+    }
+
+    .mainc h2 {
+        font-size: 22px;
+    }
+
+    .mainc input {
+        font-size: 14px;
+    }
+
+    ul {
+        font-size: 13px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+        font-size: 22px;
+    }
+}
