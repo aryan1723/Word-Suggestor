@@ -74,7 +74,15 @@
             </div>
         </div>
     </div>
-
+    <div class="cnt">
+        <div class="cnt-left">
+            <img src="img/data2.png" alt="Data Structure" style="width: 100%; height: auto; display: inline-block;">
+        </div>
+        <div class="cnt-right">
+            <h3>DATA FLOW DIAGRAM</h3>
+            <p style="text-align: justify;">The data flow diagram of the Word Suggestor project illustrates how user input is processed in a structured and interactive manner. The flow begins with the user typing a word or phrase prefix into a search input field on the web interface. This input is immediately captured by JavaScript through an event listener, which applies a debounce delay to avoid flooding the backend with requests on every keystroke. Once the input exceeds the minimum length (typically 3 characters), an AJAX request is sent to a C++ CGI script on the server, passing the typed prefix as a query. The CGI script loads a Trie data structure built from a large word list (words.txt) and performs a fast prefix-based search. The matched suggestions are then returned in JSON format to the frontend, where JavaScript dynamically updates the suggestion list below the input box in real time. This seamless loop of input, backend processing, and frontend display ensures efficient and user-friendly interaction.</p>
+        </div>
+    </div>
     <script>
     const input = document.getElementById("search");
     const list = document.getElementById("suggestions");
