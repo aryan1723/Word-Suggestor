@@ -215,7 +215,10 @@ footer {
     .container-txt h3 {
         font-size: 22px;
     }
-
+    
+    .cnt-right h3 {
+        text-align: left;
+    }
     .mainc {
         width: 100%;
         padding: 20px;
