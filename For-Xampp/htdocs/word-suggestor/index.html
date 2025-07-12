@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Merriweather&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&display=swap" rel="stylesheet">
+
+    <title>Word Suggestor</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <img src="./img/WORD SUGGESTOR.png" alt="Logo" style="width: 300px; height: auto; display: inline-block;">
+    </header>
+    <div id="prj">
+        <span>A C++ BASED PROJECT</span>
+    </div>
+    <div class="content1">
+        <div style="" class="content1-left" >
+            <div>
+                <img src="./img/WORD SUGGESTION.png" class="ph" alt="Word Suggestion" style="display:inline-block; ">
+            <br><span style="margin-top: 10px; display: block;">USING TRIE LOGIC</span>
+            </div>
+        </div>
+        <div style="border-right: 3px solid #373737; border-left: 3px solid #373737;" class="content1-center">
+            <p>
+                Word Suggestor is an intelligent, real-time text prediction system designed to assist users by providing automatic word or phrase suggestions based on partial input. As the user types into the input field, the system dynamically analyzes the entered characters and instantly retrieves the most relevant word completions or commonly used phrases. This functionality is achieved through a highly efficient data structure known as a Trie (Prefix Tree), which enables rapid prefix-based searching and retrieval from a large dictionary of valid words or multi-word phrases.
+                The primary goal of Word Suggestor is to enhance typing efficiency, reduce spelling errors, and improve user experience across various text input scenarios such as search boxes, messaging applications, 
+
+            </p>
+        </div>
+        <div class="content1-right">
+            <p>
+                language learning tools, or writing assistants. The backend logic, written in C++ using CGI (Common Gateway Interface), interacts seamlessly with the front-end built using HTML, CSS, and JavaScript, enabling smooth communication and instant updates without page reloadsThe use of CGI with C++ allows the backend to load and process large word or phrase dictionaries efficiently using Trie-based logic, ensuring minimal response times even with thousands of entries. This makes the application lightweight, fast, and fully functional in offline or low-resource environments. 
+            </p>
+        </div>
+    </div>
+    <div
+    style="display: flex; justify-content: center; align-items: center; padding: 30px 0px;  margin-bottom: 20px;"
+    >
+        <div><h1 style="text-align: left;">“A single keystroke can spark a thousand words — all it needs is the right <br>suggestion.”</h1></div>
+    </div>
+
+    <div class="containers">
+        <div class="container-txt">
+            <div>
+                <p>
+                    <span style="font-style: italic; font-weight: 600;">TRIE DATA STRUCTURE,</span> also known as a Prefix Tree. A Trie stores words by breaking them down into individual characters, allowing shared prefixes to occupy the same path in the tree. This makes searching for words based on partial input highly efficient. When a user types a few characters, the Trie quickly navigates to the matching prefix and performs a search from that point to return all possible completions. This logic supports both single words and multi-word phrases by treating the space character as part of the structure. Trie logic ensures fast and memory-efficient word suggestions, making it ideal for autocomplete systems and predictive typing applications.
+                </p>
+            </div>
+            <div>
+                <h3>TECHONOLOGIES USED</h3>
+                <ul>
+                        <li><strong>HTML</strong> – To structure the web interface (input fields, suggestion list)</li>
+                        <li><strong>CSS</strong> – To style the interface and enhance visual appearance</li>
+                        <li><strong>JavaScript</strong> – For handling real-time user input and fetching suggestions dynamically</li>
+                        <li><strong>C++</strong> – For backend logic using Trie data structure to generate word/phrase suggestions</li>
+                        <li><strong>Trie Data Structure</strong> – Core algorithm for fast prefix-based search</li>
+                        <li><strong>CGI (Common Gateway Interface)</strong> – To connect the C++ backend with the web frontend</li>
+                        <li><strong>XAMPP</strong> – Local server environment to host the CGI application and serve web files</li>
+                        <li><strong>Text Dictionary File</strong> – Contains words and/or phrases used for suggestions</li>
+                    </ul>
+            </div>
+        </div>
+
+        <div class="container-right">
+            <div class="mainc">
+                <h2>WORKING PROTOTYPE</h2>
+                <input type="text" id="search" placeholder="Type minimum 3 word for suggestions......">
+                <ul id="suggestions"></ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="cnt">
+        <div class="cnt-left">
+            <img src="img/data2.png" alt="Data Structure" style="width: 100%; height: auto; display: inline-block;">
+        </div>
+        <div class="cnt-right">
+            <h3>DATA FLOW DIAGRAM</h3>
+            <p style="text-align: justify;">The data flow diagram of the Word Suggestor project illustrates how user input is processed in a structured and interactive manner. The flow begins with the user typing a word or phrase prefix into a search input field on the web interface. This input is immediately captured by JavaScript through an event listener, which applies a debounce delay to avoid flooding the backend with requests on every keystroke. Once the input exceeds the minimum length (typically 3 characters), an AJAX request is sent to a C++ CGI script on the server, passing the typed prefix as a query. The CGI script loads a Trie data structure built from a large word list (words.txt) and performs a fast prefix-based search. The matched suggestions are then returned in JSON format to the frontend, where JavaScript dynamically updates the suggestion list below the input box in real time. This seamless loop of input, backend processing, and frontend display ensures efficient and user-friendly interaction.</p>
+        </div>
+    </div>
+
+    <script>
+    const input = document.getElementById("search");
+    const list = document.getElementById("suggestions");
+    let timeout;
+
+    input.addEventListener("input", () => {
+      clearTimeout(timeout);
+      const query = input.value.trim();
+
+      if (query.length < 3) {
+        list.innerHTML = "";
+        return;
+      }
+
+      timeout = setTimeout(async () => {
+        const res = await fetch(`/cgi-bin/trie.cgi?q=${query}`);
+        const suggestions = await res.json();
+        list.innerHTML = suggestions.map(word => `<li>${word}</li>`).join("");
+      }, 200); // debounce
+    });
+    </script>
+
+    <footer>
+        <div>
+            WORDSUGGESTOR
+        </div>
+        <div style="font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 15px;">
+            <img src="./img/git.png" alt="GitHub" style="width: 30px; height: 30px; vertical-align: middle;">
+            <a href="https://gihub.com/aryan1723/Word-Suggestor" target="_blank" style="color: white; text-decoration: none; margin-left: 1px;">aryan1723/wordsuggestor</a>
+        </div>
+    </footer>
+</html>
