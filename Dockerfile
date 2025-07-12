@@ -24,6 +24,8 @@ RUN echo "    AllowOverride None" >> /etc/apache2/apache2.conf
 RUN echo "    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch" >> /etc/apache2/apache2.conf
 RUN echo "    Require all granted" >> /etc/apache2/apache2.conf
 RUN echo "</Directory>" >> /etc/apache2/apache2.conf
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 
 EXPOSE 80
 CMD ["apachectl", "-D", "FOREGROUND"]
