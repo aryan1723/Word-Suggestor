@@ -19,7 +19,6 @@ RUN chmod +x /usr/lib/cgi-bin/trie.cgi
 RUN chmod 755 /usr/lib/cgi-bin/words.txt
 
 # Configure Apache to handle .cgi
-RUN echo "ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/" >> /etc/apache2/apache2.conf
 RUN echo "<Directory \"/usr/lib/cgi-bin\">" >> /etc/apache2/apache2.conf
 RUN echo "    AllowOverride None" >> /etc/apache2/apache2.conf
 RUN echo "    Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch" >> /etc/apache2/apache2.conf
