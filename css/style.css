@@ -105,6 +105,7 @@ ul {
     padding-left: 20px;
 }
 
+
 .mainc {
     width: 100%;
     height: 100%;
@@ -126,9 +127,27 @@ ul {
     background-color: #FFFEF2;
     margin-bottom: 20px;
 }
-
-
-
+.cnt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: 50px 0px;
+}
+.cnt-left {
+    width: 60%;
+    padding: 30px 0px;
+    padding-right: 10px;
+    border-right: 3px solid #373737;
+}
+.cnt-right {
+    width: 40%;
+    padding-left: 20px;
+}
+.cnt-right h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
 footer {
     width: 100vw;
     position: relative;
@@ -179,9 +198,13 @@ footer {
         flex-direction: column;
         align-items: center;
     }
+    .cnt {
+        flex-direction: column;
+        align-items: center;
+    }
 
     .container-txt,
-    .container-right {
+    .container-right,.cnt-left,.cnt-right {
         width: 90%;
         padding: 10px 0;
         text-align: justify;
