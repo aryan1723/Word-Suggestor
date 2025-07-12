@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'IBM Plex Serif', serif;
 }
 
 body {
@@ -72,10 +71,15 @@ header {
 }
 
 .container-txt h3 {
-    font-size: 30px;
+    font-size: 25px;
     margin: 15px 0px;
 }
-
+.continer-txt ul {
+    list-style-position: inside;
+    font-size: 14px;
+    margin: 10px 0;
+    word-break: break-word;
+}
 .continer-right {
     font-family: 'IBM Plex Serif', serif;
     font-size: 15px;
@@ -83,7 +87,7 @@ header {
     color: #373737;
 }
 
-ul {
+.continer-right ul {
     list-style-position: inside;
     font-size: 15px;
     margin: 10px 0;
